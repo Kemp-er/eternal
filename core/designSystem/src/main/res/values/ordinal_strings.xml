@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="ordinal_one">%dst.</string>
+    <string name="ordinal_two">%dnd.</string>
+    <string name="ordinal_three">%drd.</string>
+    <string name="ordinal_else">%dth.</string>
+
+</resources>

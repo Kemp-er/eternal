@@ -1,0 +1,165 @@
+[versions]
+android-compile-sdk = "34"
+android-target-sdk = "34"
+android-min-sdk = "21"
+
+java = "17"
+
+# Intellij
+intellij-plugin = "1.17.1"
+
+androidDesugarJdkLibs = "2.0.4"
+
+kotlin = "2.0.0"
+build-tools = "7.3.1"
+agp = "8.5.0"
+androidTools = "31.4.0"
+core-ktx = "1.13.1"
+activity-compose = "1.9.0"
+
+# Annotation processing
+ksp = "2.0.0-1.0.21"
+
+# DI
+hilt = "2.51.1"
+androidxHilt = "1.2.0"
+
+# UI Tooling
+material = "1.11.0"
+compose = "1.6.1"
+compose-bom = "2024.06.00"
+compose-navigation = "2.8.0-alpha8"
+destinations = "1.9.53"
+
+# Networking
+okhttp = "5.0.0-alpha.10"
+ktor = "2.3.10"
+
+# Database
+room = "2.6.1"
+realm = "1.11.0"
+
+# Security
+tink = "1.7.0"
+
+# Firebase Services
+firebase-bom = "33.1.0"
+google-services = "4.4.2"
+crashlytics = "3.0.1"
+
+# Testing
+junit = "4.13.2"
+junit-platform = "1.9.3"
+junit-version = "1.1.5"
+espresso-core = "3.5.1"
+lifecycle-runtime-ktx = "2.8.2"
+kotest = "5.6.2"
+mockk = "1.13.5"
+turbine = "0.13.0"
+
+# Debug Tooling
+logger = "2.2.0"
+timber = "5.0.1"
+leakcanary = "2.12"
+
+# Code Quality
+detekt = "1.23.6"
+spotless = "7.0.0.BETA1"
+sonarqube = "4.3.1.3277"
+ktlint = "12.1.1"
+gradle_versions = "0.51.0"
+
+
+#androidxMacroBenchmark = ""
+#dependencyGuard  = ""
+#firebasePerfPlugin  = ""
+#moduleGraph  = ""
+#protobufPlugin  = ""
+#roborazzi  = ""
+#secrets  = ""
+
+[libraries]
+android-gradle-plugin = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
+android-desugarJdkLibs = { group = "com.android.tools", name = "desugar_jdk_libs", version.ref = "androidDesugarJdkLibs" }
+kotlin-gradle-plugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+
+google-hilt = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
+google-hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
+google-hilt-testing = { group = "com.google.dagger", name = "hilt-android-testing", version.ref = "hilt" }
+
+androidx-hilt-compiler = {group = "androidx.hilt", name = "hilt-compiler", version.ref = "androidxHilt"}
+androidx-hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "androidxHilt" }
+
+google-firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebase-bom" }
+google-firebase-analytics = { group = "com.google.dagger", name = "firebase-analytics-ktx" }
+google-firebase-crashlytics = { group = "com.google.dagger", name = "firebase-crashlytics-ktx" }
+google-firebase-messaging = { group = "com.google.dagger", name = "firebase-messaging-ktx" }
+google-firebase-perf = { group = "com.google.dagger", name = "firebase-perf-ktx" }
+#google-firebase-crashlytics-gradle = { group = "com.google.dagger", name = "firebase-crashlytics-gradle", version.ref = "crashlytics" }
+
+ktor-core = { group = "io.ktor", name = "ktor-client-core", version.ref = "ktor" }
+ktor-android = { group = "io.ktor", name = "ktor-client-android", version.ref = "ktor" }
+ktor-okhttp = { group = "io.ktor", name = "ktor-client-okhttp", version.ref = "ktor" }
+ktor-content-negotiation = { group = "io.ktor", name = "ktor-client-content-negotiation", version.ref = "ktor" }
+ktor-serialization = { group = "io.ktor", name = "ktor-client-serialization", version.ref = "ktor" }
+ktor-serialization-json = { group = "io.ktor", name = "ktor-serialization-kotlinx-json", version.ref = "ktor" }
+ktor-auth = { group = "io.ktor", name = "ktor-client-auth", version.ref = "ktor" }
+ktor-logging = { group = "io.ktor", name = "ktor-client-logging", version.ref = "ktor" }
+
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junit-version" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso-core" }
+androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle-runtime-ktx" }
+androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activity-compose" }
+androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "compose-bom" }
+androidx-ui = { group = "androidx.compose.ui", name = "ui" }
+androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
+androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
+androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
+androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
+
+# Classpath
+detekt_plugin = { group = "io.gitlab.arturbosch.detekt", name = "detekt-gradle-plugin", version.ref = "detekt" }
+spotless_plugin = { group = "com.diffplug.spotless", name = "spotless-plugin-gradle", version.ref = "spotless" }
+ktlint_plugin = { group = "org.jlleitschuh.gradle", name = "ktlint-gradle", version.ref = "ktlint" }
+gradle_versions_plugin = { group = "com.github.ben-manes", name = "gradle-versions-plugin", version.ref = "gradle_versions" }
+
+logger = { group = "com.orhanobut", name = "logger", version.ref = "logger" }
+timber = { group = "com.jakewharton.timber", name = "timber", version.ref = "timber"}
+leakcanary = { group = "com.squareup.leakcanary", name = "leakcanary-android", version.ref = "leakcanary" }
+
+[bundles]
+hilt = ["google-hilt", "androidx-hilt-navigation-compose"]
+hilt-ksp = ["google-hilt-compiler", "androidx-hilt-compiler"]
+ktor = ["ktor-core", "ktor-android", "ktor-okhttp", "ktor-content-negotiation", "ktor-serialization", "ktor-serialization-json", "ktor-auth", "ktor-logging"]
+compose = []
+firebase = ["google-firebase-bom", "google-firebase-perf", "google-firebase-crashlytics", "google-firebase-analytics", "google-firebase-messaging"]
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+android-library = { id = "com.android.library", version.ref = "agp" }
+jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+google-hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+google-services = { id = "com.google.gms.google-services", version.ref = "google-services" }
+google-crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "crashlytics" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
+sonarqube = { id = "org.sonarqube", version.ref = "sonarqube" }
+spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
+
+#android-test = { id = "com.android.test", version.ref = "agp" }
+#baselineprofile = { id = "androidx.baselineprofile", version.ref = "androidxMacroBenchmark"}
+#compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+#dependencyGuard = { id = "com.dropbox.dependency-guard", version.ref = "dependencyGuard" }
+#google-firebase-perf = { id = "com.google.firebase.firebase-perf", version.ref = "firebasePerfPlugin" }
+#kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+#kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+#module-graph = { id = "com.jraska.module.graph.assertion", version.ref = "moduleGraph" }
+#protobuf = { id = "com.google.protobuf", version.ref = "protobufPlugin" }
+#roborazzi = { id = "io.github.takahirom.roborazzi", version.ref = "roborazzi" }
+#room = { id = "androidx.room", version.ref = "room" }
+#secrets = { id = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin", version.ref = "secrets" }
