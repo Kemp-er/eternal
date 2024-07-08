@@ -1,3 +1,5 @@
+package plugin.android
+
 import com.android.build.api.dsl.ApplicationExtension
 import com.ecardero.eternal.configureKotlinAndroid
 import extension.findPluginOrThrow
@@ -7,6 +9,7 @@ import org.gradle.api.Project
 import org.gradle.kotlin.dsl.apply
 import org.gradle.kotlin.dsl.configure
 import org.gradle.kotlin.dsl.dependencies
+import plugin.android.compose.ComposeAndroidApplicationPlugin
 
 class AndroidApplicationPlugin : Plugin<Project> {
     override fun apply(target: Project) = target.run {
@@ -15,6 +18,9 @@ class AndroidApplicationPlugin : Plugin<Project> {
             plugin (libs.findPluginOrThrow("jetbrains.kotlin.android").get().pluginId)
             plugin (libs.findPluginOrThrow("ksp").get().pluginId)
         }
+
+        apply<HiltPlugin>()
+        apply<ComposeAndroidApplicationPlugin>()
 
         extensions.configure<ApplicationExtension> {
             configureKotlinAndroid(this)

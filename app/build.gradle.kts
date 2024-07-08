@@ -1,13 +1,7 @@
 plugins {
     id("uhit.android.application")
     id("uhit.code.quality")
-    id("uhit.compose")
-//    alias(libs.plugins.android.application)
-//    alias(libs.plugins.jetbrains.kotlin.android)
-    alias(libs.plugins.detekt)
-    alias(libs.plugins.sonarqube)
-    alias(libs.plugins.google.hilt)
-//    alias(libs.plugins.ksp)
+    //id("uhit.compose")
 }
 
 if (file("google-services.json").exists()) {
@@ -19,19 +13,15 @@ if (file("google-services.json").exists()) {
 
 android {
     namespace = "com.ecardero.eternal"
-    compileSdk = libs.versions.android.compile.sdk.get().toInt()
-
     defaultConfig {
         applicationId = "com.ecardero.eternal"
-        minSdk = libs.versions.android.min.sdk.get().toInt()
-        targetSdk = libs.versions.android.target.sdk.get().toInt()
         versionCode = 1
         versionName = "1.0"
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        vectorDrawables {
-            useSupportLibrary = true
-        }
+//        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+//        vectorDrawables {
+//            useSupportLibrary = true
+//        }
     }
 
     buildTypes {
@@ -60,27 +50,27 @@ android {
 //            buildConfigField("long", "FIREBASE_FETCH_INTERVAL", "${TimeUnit.HOURS.toSeconds(10)}L")
 //        }
     }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
-
-    hilt {
-        enableAggregatingTask = true
-    }
-
-    buildFeatures {
-        compose = true
-    }
-
-    packaging {
-        resources {
-            excludes += "/META-INF/{AL2.0,LGPL2.1}"
-        }
-    }
+//    compileOptions {
+//        sourceCompatibility = JavaVersion.VERSION_1_8
+//        targetCompatibility = JavaVersion.VERSION_1_8
+//    }
+//    kotlinOptions {
+//        jvmTarget = "1.8"
+//    }
+//
+//    hilt {
+//        enableAggregatingTask = true
+//    }
+//
+//    buildFeatures {
+//        compose = true
+//    }
+//
+//    packaging {
+//        resources {
+//            excludes += "/META-INF/{AL2.0,LGPL2.1}"
+//        }
+//    }
 
     flavorDimensions.add("environment")
     productFlavors {
@@ -122,7 +112,7 @@ dependencies {
     implementation(libs.androidx.material3)
 
     // Network
-    implementation(libs.bundles.ktor)
+//    implementation(libs.bundles.ktor)
 
     // Debug
     implementation(libs.logger)

@@ -1,3 +1,5 @@
+package plugin.codequality
+
 import com.diffplug.gradle.spotless.SpotlessExtension
 import com.diffplug.gradle.spotless.SpotlessPlugin
 import org.gradle.api.Plugin

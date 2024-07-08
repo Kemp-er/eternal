@@ -1,0 +1,22 @@
+name: Android Nightly Build
+
+on:
+  schedule:
+    - cron: '0 1 * * *' # Se ejecutará todos los días a la 1 AM UTC
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Build with Gradle
+        run: ./gradlew assembleDebug

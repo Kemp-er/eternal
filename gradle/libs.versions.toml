@@ -23,6 +23,7 @@ ksp = "2.0.0-1.0.21"
 # DI
 hilt = "2.51.1"
 androidxHilt = "1.2.0"
+javaxInject = "1"
 
 # UI Tooling
 material = "1.11.0"
@@ -43,16 +44,16 @@ realm = "1.11.0"
 tink = "1.7.0"
 
 # Firebase Services
-firebase-bom = "33.1.0"
+firebase-bom = "33.1.1"
 google-services = "4.4.2"
-crashlytics = "3.0.1"
+crashlytics = "3.0.2"
 
 # Testing
 junit = "4.13.2"
 junit-platform = "1.9.3"
-junit-version = "1.1.5"
-espresso-core = "3.5.1"
-lifecycle-runtime-ktx = "2.8.2"
+junit-version = "1.2.1"
+espresso-core = "3.6.1"
+lifecycle-runtime-ktx = "2.8.3"
 kotest = "5.6.2"
 mockk = "1.13.5"
 turbine = "0.13.0"
@@ -88,6 +89,7 @@ junit = { group = "junit", name = "junit", version.ref = "junit" }
 google-hilt = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
 google-hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
 google-hilt-testing = { group = "com.google.dagger", name = "hilt-android-testing", version.ref = "hilt" }
+javax-inject = { group = "javax.inject", name = "javax.inject", version.ref = "javaxInject" }
 
 androidx-hilt-compiler = {group = "androidx.hilt", name = "hilt-compiler", version.ref = "androidxHilt"}
 androidx-hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "androidxHilt" }
@@ -113,6 +115,8 @@ androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-co
 androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle-runtime-ktx" }
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activity-compose" }
 androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "compose-bom" }
+androidx-compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+androidx-compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
 androidx-ui = { group = "androidx.compose.ui", name = "ui" }
 androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
 androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
@@ -132,10 +136,10 @@ timber = { group = "com.jakewharton.timber", name = "timber", version.ref = "tim
 leakcanary = { group = "com.squareup.leakcanary", name = "leakcanary-android", version.ref = "leakcanary" }
 
 [bundles]
-hilt = ["google-hilt", "androidx-hilt-navigation-compose"]
+hilt = ["google-hilt"]
 hilt-ksp = ["google-hilt-compiler", "androidx-hilt-compiler"]
 ktor = ["ktor-core", "ktor-android", "ktor-okhttp", "ktor-content-negotiation", "ktor-serialization", "ktor-serialization-json", "ktor-auth", "ktor-logging"]
-compose = []
+compose = ["androidx-activity-compose", "androidx-compose-ui-tooling", "androidx-compose-ui-tooling-preview", "androidx-hilt-navigation-compose"]
 firebase = ["google-firebase-bom", "google-firebase-perf", "google-firebase-crashlytics", "google-firebase-analytics", "google-firebase-messaging"]
 
 [plugins]
@@ -153,11 +157,10 @@ spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
 
 #android-test = { id = "com.android.test", version.ref = "agp" }
 #baselineprofile = { id = "androidx.baselineprofile", version.ref = "androidxMacroBenchmark"}
-#compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 #dependencyGuard = { id = "com.dropbox.dependency-guard", version.ref = "dependencyGuard" }
 #google-firebase-perf = { id = "com.google.firebase.firebase-perf", version.ref = "firebasePerfPlugin" }
-#kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
-#kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 #module-graph = { id = "com.jraska.module.graph.assertion", version.ref = "moduleGraph" }
 #protobuf = { id = "com.google.protobuf", version.ref = "protobufPlugin" }
 #roborazzi = { id = "io.github.takahirom.roborazzi", version.ref = "roborazzi" }

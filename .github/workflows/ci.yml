@@ -1,0 +1,52 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    branches:
+      - '*'
+
+  workflow_dispatch:
+
+jobs:
+  build-and-test:
+    name: Debug Build and Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Spotless - Code format
+        run: ./gradlew spotlessCheck
+
+      - name: Detekt - Code quality
+        run: ./gradlew detekt
+
+      - name: Run Tests
+        run: ./gradlew test
+
+      - name: Create local properties file
+        run: |
+          touch credentials.properties
+          echo public_key="\"${{ secrets.TEST_PUBLIC_KEY }}\"" >> credentials.properties
+          echo secret_key="\"${{ secrets.TEST_SECRET_KEY }}\"" >> credentials.properties
+          cat credentials.properties
+
+      - name: Build with Gradle (Debug)
+        run: ./gradlew assembleDebug
+
+      - name: Upload APK to Github Artifacts
+        uses: actions/upload-artifact@v1
+        with:
+          name: app
+          path: app/build/outputs/apk/debug/app-debug.apk

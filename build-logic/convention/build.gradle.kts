@@ -36,24 +36,44 @@ dependencies {
 
 gradlePlugin {
     plugins {
-        register("code-quality-plugin") {
-            id = "uhit.code.quality"
-            implementationClass = "CodeQualityPlugin"
-        }
-
         register("android-application-plugin") {
             id = "uhit.android.application"
-            implementationClass = "AndroidApplicationPlugin"
+            implementationClass = "plugin.android.AndroidApplicationPlugin"
         }
 
-//        register("android-library-plugin") {
-//            id = "uhit.android.library"
-//            implementationClass = "AndroidLibraryPlugin"
-//        }
+        register("android-library-plugin") {
+            id = "uhit.android.library"
+            implementationClass = "plugin.android.AndroidLibraryPlugin"
+        }
 
-        register("compose-plugin") {
-            id = "uhit.compose"
-            implementationClass = "ComposePlugin"
+        register("kotlin-library-plugin") {
+            id = "uhit.kotlin.library"
+            implementationClass = "plugin.KotlinLibraryPlugin"
+        }
+
+        register("compose-android-feature-application") {
+            id = "uhit.compose.application"
+            implementationClass = "plugin.android.compose.ComposeAndroidApplicationPlugin"
+        }
+
+        register("compose-android-feature-library") {
+            id = "uhit.compose.library"
+            implementationClass = "plugin.android.compose.ComposeAndroidLibraryPlugin"
+        }
+
+        register("compose-android-feature-plugin") {
+            id = "uhit.compose.feature"
+            implementationClass = "plugin.android.compose.ComposeAndroidFeaturePlugin"
+        }
+
+        register("code-quality-plugin") {
+            id = "uhit.code.quality"
+            implementationClass = "plugin.CodeQualityPlugin"
+        }
+
+        register("hilt-plugin") {
+            id = "uhit.hilt"
+            implementationClass = "plugin.android.HiltPlugin"
         }
     }
 }

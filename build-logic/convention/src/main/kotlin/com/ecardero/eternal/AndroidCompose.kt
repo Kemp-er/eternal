@@ -1,22 +1,21 @@
 package com.ecardero.eternal
 
 import com.android.build.api.dsl.CommonExtension
+import extension.libs
 import org.gradle.api.Project
-import org.gradle.api.artifacts.VersionCatalogsExtension
-import org.gradle.kotlin.dsl.getByType
 
-fun Project.configureAndroidCompose(
+internal fun Project.configureCompose(
     commonExtension: CommonExtension<*, *, *, *, *, *>,
 ) {
-    val libs = extensions.getByType<VersionCatalogsExtension>().named("libs")
-
     commonExtension.apply {
         buildFeatures {
             compose = true
         }
 
-        composeOptions {
-            kotlinCompilerExtensionVersion = libs.findVersion("compose_compiler").get().toString()
+        packaging {
+            resources {
+                excludes.add("/META-INF/{AL2.0,LGPL2.1}")
+            }
         }
     }
 }
