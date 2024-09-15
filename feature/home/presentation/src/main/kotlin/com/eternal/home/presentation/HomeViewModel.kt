@@ -4,16 +4,15 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.eternal.core.presentation.MVI
 import com.eternal.core.presentation.mvi
-import com.eternal.home.presentation.HomeContract.UiState
-import com.eternal.home.presentation.HomeContract.UiAction
 import com.eternal.home.presentation.HomeContract.SideEffect
+import com.eternal.home.presentation.HomeContract.UiAction
+import com.eternal.home.presentation.HomeContract.UiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class HomeViewModel @Inject constructor(
-
-) : ViewModel(),
+class HomeViewModel @Inject constructor() :
+    ViewModel(),
     MVI<UiState, UiAction, SideEffect> by mvi(initialUiState = initialUiState()) {
 
     override fun onAction(uiAction: UiAction) {

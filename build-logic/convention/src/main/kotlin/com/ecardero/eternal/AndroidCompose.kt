@@ -1,7 +1,6 @@
 package com.ecardero.eternal
 
 import com.android.build.api.dsl.CommonExtension
-import extension.libs
 import org.gradle.api.Project
 
 internal fun Project.configureCompose(

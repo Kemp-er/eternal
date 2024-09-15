@@ -9,9 +9,9 @@ import org.gradle.kotlin.dsl.dependencies
 class HiltPlugin : Plugin<Project> {
     override fun apply(target: Project) = target.run {
         apply {
-            plugin (libs.findPluginOrThrow("jetbrains.kotlin.android").get().pluginId)
-            plugin (libs.findPluginOrThrow("google.hilt").get().pluginId)
-            //plugin (libs.findPluginOrThrow("ksp").get().pluginId)
+            plugin(libs.findPluginOrThrow("jetbrains.kotlin.android").get().pluginId)
+            plugin(libs.findPluginOrThrow("google.hilt").get().pluginId)
+//            plugin(libs.findPluginOrThrow("ksp").get().pluginId)
         }
 
         dependencies {

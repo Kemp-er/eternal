@@ -1,5 +1,5 @@
 plugins {
-    id("uhit.android.library")
+    id("uhit.compose.feature")
 }
 
 android {

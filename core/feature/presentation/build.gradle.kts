@@ -5,7 +5,3 @@ plugins {
 android {
     namespace = "com.eternal.core.presentation"
 }
-
-dependencies {
-
-}

@@ -10,9 +10,8 @@ import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
-class MVIDelegate<UiState, UiAction, SideEffect> internal constructor(
-    initialUiState: UiState,
-) : MVI<UiState, UiAction, SideEffect> {
+class MVIDelegate<UiState, UiAction, SideEffect> internal constructor(initialUiState: UiState) :
+    MVI<UiState, UiAction, SideEffect> {
 
     private val _uiState = MutableStateFlow(initialUiState)
     override val uiState: StateFlow<UiState> = _uiState.asStateFlow()

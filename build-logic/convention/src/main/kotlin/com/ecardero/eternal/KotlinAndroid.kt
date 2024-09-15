@@ -4,15 +4,12 @@ import com.android.build.api.dsl.CommonExtension
 import extension.libs
 import org.gradle.api.JavaVersion
 import org.gradle.api.Project
-import org.gradle.api.plugins.ExtensionAware
 import org.gradle.api.plugins.JavaPluginExtension
-import org.gradle.kotlin.dsl.assign
 import org.gradle.kotlin.dsl.configure
 import org.gradle.kotlin.dsl.dependencies
 import org.gradle.kotlin.dsl.provideDelegate
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.dsl.KotlinAndroidProjectExtension
-import org.jetbrains.kotlin.gradle.dsl.KotlinJvmOptions
 import org.jetbrains.kotlin.gradle.dsl.KotlinJvmProjectExtension
 import org.jetbrains.kotlin.gradle.dsl.KotlinTopLevelExtension
 
@@ -23,10 +20,10 @@ internal fun Project.configureKotlinAndroid(
     commonExtension: CommonExtension<*, *, *, *, *, *>,
 ) {
     commonExtension.apply {
-        compileSdk = 34
+        compileSdk = libs.findVersion("compileSdk").get().toString().toInt()
 
         defaultConfig {
-            minSdk = 21
+            minSdk = libs.findVersion("minSdk").get().toString().toInt()
             testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
             vectorDrawables {
@@ -75,8 +72,8 @@ private inline fun <reified T : KotlinTopLevelExtension> Project.configureKotlin
         is KotlinJvmProjectExtension -> compilerOptions
         else -> TODO("Unsupported project extension $this ${T::class}")
     }.apply {
-        jvmTarget = JvmTarget.JVM_11
-        allWarningsAsErrors = warningsAsErrors.toBoolean()
+        jvmTarget.set(JvmTarget.JVM_11)
+        allWarningsAsErrors.set(warningsAsErrors.toBoolean())
         freeCompilerArgs.addAll(
             // Enable experimental coroutines APIs, including Flow
             "-opt-in=kotlinx.coroutines.ExperimentalCoroutinesApi",

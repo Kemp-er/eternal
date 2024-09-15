@@ -11,20 +11,21 @@ class AppDetektPlugin : Plugin<Project> {
         apply<DetektPlugin>()
 
         configure<DetektExtension> {
-            config.from(files("$rootDir/.detekt/config.yaml"))
+            config.setFrom(files("$rootDir/.detekt/config.yml"))
 
             autoCorrect = true
             parallel = true
 
             // By default detekt does not check test source set and gradle specific files,
             // so hey have to be added manually
-            source.from(files(
-                "$rootDir/buildSrc",
-                "$rootDir/build.gradle.kts",
-                "$rootDir/settings.gradle.kts",
-                "src/main/kotlin",
-                "src/main/java"
-            ))
+            source.from(
+                files(
+                    "$rootDir/build.gradle.kts",
+                    "$rootDir/settings.gradle.kts",
+                    "src/main/kotlin",
+                    "src/main/java",
+                ),
+            )
         }
     }
 }

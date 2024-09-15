@@ -9,18 +9,20 @@ import org.gradle.api.Project
 import org.gradle.kotlin.dsl.apply
 import org.gradle.kotlin.dsl.configure
 import org.gradle.kotlin.dsl.dependencies
+import plugin.CodeQualityPlugin
 import plugin.android.compose.ComposeAndroidApplicationPlugin
 
 class AndroidApplicationPlugin : Plugin<Project> {
     override fun apply(target: Project) = target.run {
         apply {
-            plugin (libs.findPluginOrThrow("android.application").get().pluginId)
-            plugin (libs.findPluginOrThrow("jetbrains.kotlin.android").get().pluginId)
-            plugin (libs.findPluginOrThrow("ksp").get().pluginId)
+            plugin(libs.findPluginOrThrow("android.application").get().pluginId)
+            plugin(libs.findPluginOrThrow("jetbrains.kotlin.android").get().pluginId)
+            plugin(libs.findPluginOrThrow("ksp").get().pluginId)
         }
 
         apply<HiltPlugin>()
         apply<ComposeAndroidApplicationPlugin>()
+        apply<CodeQualityPlugin>()
 
         extensions.configure<ApplicationExtension> {
             configureKotlinAndroid(this)

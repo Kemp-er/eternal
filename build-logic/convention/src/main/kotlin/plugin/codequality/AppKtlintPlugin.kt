@@ -21,7 +21,7 @@ class AppKtlintPlugin : Plugin<Project> {
             enableExperimentalRules.set(true)
             outputToConsole.set(true)
             outputColorName.set("RED")
-            //disabledRules.add("import-ordering")
+//            disabledRules.add("import-ordering")
 
             reporters {
                 reporter(ReporterType.PLAIN)
@@ -29,7 +29,7 @@ class AppKtlintPlugin : Plugin<Project> {
             }
 
             filter {
-                // exclude("**/generated/**")
+                exclude("**/generated/**")
                 exclude {
                     projectDir.toURI().relativize(it.file.toURI()).path.contains("/generated/")
                 }

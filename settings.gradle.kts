@@ -22,6 +22,7 @@ dependencyResolutionManagement {
 
 rootProject.name = "Eternal"
 include(":app")
+include(":showcase")
 
 include(
     ":core:shared",
@@ -35,29 +36,39 @@ include(
     ":feature:splash",
     ":feature:register",
     ":feature:login",
+    ":feature:news",
     ":feature:home",
 )
 
-// data
+// Data
 include(
     ":feature:splash:data",
     ":feature:register:data",
     ":feature:login:data",
+    ":feature:news:data",
     ":feature:home:data",
 )
 
-// domain
+// Domain
 include(
     ":feature:splash:domain",
     ":feature:register:domain",
     ":feature:login:domain",
+    ":feature:news:domain",
     ":feature:home:domain",
 )
 
-// presentation
+// Presentation
 include(
     ":feature:splash:presentation",
     ":feature:register:presentation",
     ":feature:login:presentation",
+    ":feature:news:presentation:list",
+    ":feature:news:presentation:detail",
     ":feature:home:presentation",
+)
+
+// Integration
+include(
+    ":integration:news",
 )
