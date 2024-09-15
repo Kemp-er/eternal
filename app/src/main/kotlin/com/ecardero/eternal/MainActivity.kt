@@ -4,13 +4,9 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.gestures.Orientation
-import androidx.compose.foundation.gestures.scrollable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Scaffold
@@ -21,6 +17,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.ecardero.eternal.ui.theme.EternalTheme
 import dagger.hilt.android.AndroidEntryPoint
+import timber.log.Timber
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
@@ -31,8 +28,7 @@ class MainActivity : ComponentActivity() {
             EternalTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding),
+                        modifier = Modifier.padding(innerPadding)
                     )
                 }
             }
@@ -42,14 +38,14 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Greeting(
-    name: String,
     modifier: Modifier = Modifier,
 ) {
     Column(
-        modifier = Modifier
-            .verticalScroll(rememberScrollState())
+        modifier = modifier
+            .verticalScroll(rememberScrollState()),
     ) {
         for (i in 1..1000) {
+            Timber.d("Greeting: $i")
             TestItem()
         }
     }
@@ -67,6 +63,6 @@ fun TestItem() {
 @Composable
 fun GreetingPreview() {
     EternalTheme {
-        Greeting("Android")
+        Greeting()
     }
 }
