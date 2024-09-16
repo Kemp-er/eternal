@@ -116,7 +116,7 @@ dependencies {
     // Debug
     implementation(libs.logger)
     implementation(libs.timber)
-    debugImplementation(libs.leakcanary)
+//    debugImplementation(libs.leakcanary)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

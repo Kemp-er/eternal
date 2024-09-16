@@ -16,6 +16,7 @@ class AndroidLibraryPlugin : Plugin<Project> {
         apply {
             plugin(libs.findPluginOrThrow("android.library").get().pluginId)
             plugin(libs.findPluginOrThrow("jetbrains.kotlin.android").get().pluginId)
+            plugin(libs.findPluginOrThrow("kotlin-serialization").get().pluginId)
             plugin(libs.findPluginOrThrow("ksp").get().pluginId)
         }
         apply<HiltPlugin>()

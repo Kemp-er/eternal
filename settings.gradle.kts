@@ -68,6 +68,11 @@ include(
     ":feature:home:presentation",
 )
 
+// Navigation
+include(
+    ":feature:home:navigation",
+)
+
 // Integration
 include(
     ":integration:news",

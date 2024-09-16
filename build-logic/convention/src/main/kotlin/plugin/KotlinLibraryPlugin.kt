@@ -14,6 +14,7 @@ class KotlinLibraryPlugin : Plugin<Project> {
     override fun apply(target: Project) = target.run {
         apply {
             plugin(libs.findPluginOrThrow("kotlin-jvm").get().pluginId)
+            plugin(libs.findPluginOrThrow("kotlin-serialization").get().pluginId)
         }
 
         extensions.configure<JavaPluginExtension> {

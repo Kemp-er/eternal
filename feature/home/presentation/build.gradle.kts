@@ -7,5 +7,6 @@ android {
 }
 
 dependencies {
+    implementation(project(":feature:home:navigation"))
     implementation(project(":core:feature:presentation"))
 }

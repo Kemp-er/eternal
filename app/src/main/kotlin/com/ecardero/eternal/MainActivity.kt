@@ -4,11 +4,11 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.verticalScroll
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -17,7 +17,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.ecardero.eternal.ui.theme.EternalTheme
 import dagger.hilt.android.AndroidEntryPoint
-import timber.log.Timber
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
@@ -40,22 +39,26 @@ class MainActivity : ComponentActivity() {
 fun Greeting(
     modifier: Modifier = Modifier,
 ) {
-    Column(
+    val list = (0..1000).toList()
+    LazyColumn (
         modifier = modifier
-            .verticalScroll(rememberScrollState()),
+            .fillMaxWidth(),
     ) {
-        for (i in 1..1000) {
-            Timber.d("Greeting: $i")
+        item {
             TestItem()
+        }
+        items(list) { item ->
+            Text("Hello Uganda $item")
         }
     }
 }
 
 @Composable
 fun TestItem() {
+
     val viewModel: MainViewModel = hiltViewModel()
     Text(
-        text = "time -> ${viewModel.getTime()}",
+        text = "random -> ${viewModel.getTime()}",
     )
 }
 
