@@ -23,6 +23,7 @@ class KotlinLibraryPlugin : Plugin<Project> {
 
         dependencies {
             add("implementation", libs.findLibraryOrThrow("javax.inject").get())
+            add("implementation", libs.findLibraryOrThrow("kotlinx.serialization.core").get())
         }
     }
 }

@@ -44,6 +44,7 @@
             <option value="$PROJECT_DIR$/feature/news" />
             <option value="$PROJECT_DIR$/feature/news/data" />
             <option value="$PROJECT_DIR$/feature/news/domain" />
+            <option value="$PROJECT_DIR$/feature/news/navigation" />
             <option value="$PROJECT_DIR$/feature/news/presentation" />
             <option value="$PROJECT_DIR$/feature/news/presentation/detail" />
             <option value="$PROJECT_DIR$/feature/news/presentation/list" />

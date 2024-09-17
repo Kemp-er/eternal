@@ -29,6 +29,7 @@ class AndroidLibraryPlugin : Plugin<Project> {
         dependencies {
             add("implementation", libs.findBundle("hilt").get())
             add("ksp", libs.findBundle("hilt-ksp").get())
+            add("implementation", libs.findLibrary("kotlinx.serialization.core").get())
         }
     }
 }

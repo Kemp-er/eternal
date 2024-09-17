@@ -1,5 +1,5 @@
 plugins {
-    id("uhit.android.library")
+    id("uhit.compose.feature")
 }
 
 android {
@@ -7,5 +7,7 @@ android {
 }
 
 dependencies {
+    implementation(project(":feature:home:presentation"))
 
+    implementation(libs.androidx.navigation.common.ktx)
 }

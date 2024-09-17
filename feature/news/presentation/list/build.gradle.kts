@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace = "com.eternal.home.presentation"
+    namespace = "com.eternal.feature.news.presentation.list"
 }
 
 dependencies {

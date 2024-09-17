@@ -15,6 +15,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.rememberNavController
 import com.ecardero.eternal.ui.theme.EternalTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -26,9 +28,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             EternalTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        modifier = Modifier.padding(innerPadding)
-                    )
+
                 }
             }
         }
@@ -36,36 +36,11 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(
-    modifier: Modifier = Modifier,
-) {
-    val list = (0..1000).toList()
-    LazyColumn (
-        modifier = modifier
-            .fillMaxWidth(),
-    ) {
-        item {
-            TestItem()
-        }
-        items(list) { item ->
-            Text("Hello Uganda $item")
-        }
-    }
-}
-
-@Composable
-fun TestItem() {
-
-    val viewModel: MainViewModel = hiltViewModel()
-    Text(
-        text = "random -> ${viewModel.getTime()}",
+fun NavigationConfiguration() {
+    val navController = rememberNavController()
+    NavHost(
+        navController = navController,
+        startDestination = ,
     )
-}
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    EternalTheme {
-        Greeting()
-    }
 }

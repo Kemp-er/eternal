@@ -73,6 +73,7 @@ spotless = "7.0.0.BETA1"
 sonarqube = "4.3.1.3277"
 ktlint = "12.1.1"
 gradle_versions = "0.51.0"
+navigationCommonKtx = "2.8.0"
 
 
 #androidxMacroBenchmark = ""
@@ -141,6 +142,7 @@ gradle_versions_plugin = { group = "com.github.ben-manes", name = "gradle-versio
 logger = { group = "com.orhanobut", name = "logger", version.ref = "logger" }
 timber = { group = "com.jakewharton.timber", name = "timber", version.ref = "timber"}
 leakcanary = { group = "com.squareup.leakcanary", name = "leakcanary-android", version.ref = "leakcanary" }
+androidx-navigation-common-ktx = { group = "androidx.navigation", name = "navigation-common-ktx", version.ref = "compose-navigation" }
 
 [bundles]
 hilt = ["google-hilt"]

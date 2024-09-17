@@ -71,6 +71,7 @@ include(
 // Navigation
 include(
     ":feature:home:navigation",
+    ":feature:news:navigation",
 )
 
 // Integration
