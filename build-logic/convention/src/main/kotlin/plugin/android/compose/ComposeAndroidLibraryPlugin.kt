@@ -27,7 +27,7 @@ class ComposeAndroidLibraryPlugin : Plugin<Project> {
         }
 
         dependencies {
-            add("implementation", libs.findLibraryOrThrow("kotlinx-serialization-core").get())
+            add("implementation", libs.findLibraryOrThrow("kotlinx.serialization.json").get())
             add("implementation", platform(libs.findLibraryOrThrow("androidx-compose-bom").get()))
             add("implementation", libs.findBundle("compose").get())
         }

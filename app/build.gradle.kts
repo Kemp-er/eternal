@@ -93,6 +93,9 @@ android {
 }
 
 dependencies {
+    // Navigation
+    implementation(project(":feature:home:navigation"))
+    implementation(project(":feature:news:navigation"))
 
     // Core
     implementation(libs.androidx.core.ktx)

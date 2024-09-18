@@ -9,14 +9,15 @@ import kotlinx.serialization.Serializable
 @Serializable
 object Home
 
-
 @Serializable
 object HomeGraph
 
 fun NavGraphBuilder.homeGraph() {
     navigation<HomeGraph>(startDestination = Home) {
         composable<Home> {
-            HomeScreen()
+            HomeScreen(
+                onNavigateToNewsList = {}
+            )
         }
     }
 }
