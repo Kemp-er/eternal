@@ -24,18 +24,19 @@ fun NavGraphBuilder.newsGraph() {
     navigation<NewsGraph>(startDestination = NewsList) {
         composable<NewsList>(
             deepLinks = listOf(
-                navDeepLink<NewsList>(basePath = "$BASE_ROUTE/newslist")
-            )
+                navDeepLink<NewsList>(basePath = "$BASE_ROUTE/newslist"),
+            ),
         ) {
             NewsListScreen()
         }
 
         composable<News>(
             deepLinks = listOf(
-                navDeepLink<News>(basePath = "$BASE_ROUTE/news")
-            )
+                navDeepLink<News>(basePath = "$BASE_ROUTE/news"),
+            ),
         ) { backStackEntry ->
-            NewsScreen(id = backStackEntry.toRoute<News>().id)
+            val arguments = backStackEntry.toRoute<News>()
+            NewsScreen(id = arguments.id)
         }
     }
 }

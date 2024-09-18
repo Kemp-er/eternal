@@ -3,10 +3,10 @@ package com.eternal.core.presentation.list
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.eternal.core.presentation.MVI
-import com.eternal.core.presentation.mvi
 import com.eternal.core.presentation.list.NewsDetailContract.SideEffect
 import com.eternal.core.presentation.list.NewsDetailContract.UiAction
 import com.eternal.core.presentation.list.NewsDetailContract.UiState
+import com.eternal.core.presentation.mvi
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 

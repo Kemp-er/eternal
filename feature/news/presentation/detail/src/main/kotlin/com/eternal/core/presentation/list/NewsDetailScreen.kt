@@ -25,6 +25,6 @@ fun NewsScreen(id: String) {
 @Composable
 fun NewsScreenPreview() {
     NewsScreen(
-        id = "123"
+        id = "123",
     )
 }

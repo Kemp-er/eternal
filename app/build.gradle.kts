@@ -16,11 +16,6 @@ android {
         applicationId = "com.ecardero.eternal"
         versionCode = 1
         versionName = "1.0"
-
-//        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-//        vectorDrawables {
-//            useSupportLibrary = true
-//        }
     }
 
     buildTypes {
@@ -49,27 +44,6 @@ android {
 //            buildConfigField("long", "FIREBASE_FETCH_INTERVAL", "${TimeUnit.HOURS.toSeconds(10)}L")
 //        }
     }
-//    compileOptions {
-//        sourceCompatibility = JavaVersion.VERSION_1_8
-//        targetCompatibility = JavaVersion.VERSION_1_8
-//    }
-//    kotlinOptions {
-//        jvmTarget = "1.8"
-//    }
-//
-//    hilt {
-//        enableAggregatingTask = true
-//    }
-//
-//    buildFeatures {
-//        compose = true
-//    }
-//
-//    packaging {
-//        resources {
-//            excludes += "/META-INF/{AL2.0,LGPL2.1}"
-//        }
-//    }
 
     flavorDimensions.add("environment")
     productFlavors {
@@ -112,9 +86,6 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
-
-    // Network
-//    implementation(libs.bundles.ktor)
 
     // Debug
     implementation(libs.logger)

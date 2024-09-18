@@ -16,7 +16,6 @@ fun NewsListScreen() {
             .fillMaxSize(),
     ) {
         LazyColumn {
-
         }
     }
 }

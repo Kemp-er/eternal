@@ -16,7 +16,7 @@ fun NavGraphBuilder.homeGraph() {
     navigation<HomeGraph>(startDestination = Home) {
         composable<Home> {
             HomeScreen(
-                onNavigateToNewsList = {}
+                onNavigateToNewsList = {},
             )
         }
     }
