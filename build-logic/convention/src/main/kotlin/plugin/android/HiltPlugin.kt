@@ -11,7 +11,7 @@ class HiltPlugin : Plugin<Project> {
         apply {
             plugin(libs.findPluginOrThrow("jetbrains.kotlin.android").get().pluginId)
             plugin(libs.findPluginOrThrow("google.hilt").get().pluginId)
-//            plugin(libs.findPluginOrThrow("ksp").get().pluginId)
+            plugin(libs.findPluginOrThrow("ksp").get().pluginId)
         }
 
         dependencies {

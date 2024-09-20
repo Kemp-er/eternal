@@ -1,6 +1,6 @@
-package com.eternal.core.presentation.list
+package com.eternal.feature.product.presentation.detail
 
-interface NewsDetailContract {
+interface ProductDetailContract {
     data class UiState(val id: String)
 
     sealed interface UiAction {

@@ -1,4 +1,4 @@
-package com.eternal.core.presentation.list
+package com.eternal.feature.product.presentation.detail
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
@@ -11,19 +11,19 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class NewsRoute(val id: String)
+data class ProductRoute(val id: String)
 
 @Composable
-fun NewsScreen(
-    viewModel: NewsDetailViewModel = hiltViewModel(),
-    onNewsDetailClick: (String) -> Unit,
+fun ProductScreen(
+    viewModel: ProductDetailViewModel = hiltViewModel(),
+    onProductClick: (String) -> Unit,
 ) {
-    val id = viewModel.newsRouteId
-    val veryLongString: String = "News ID -> "
+    val id = viewModel.productId
+    val veryLongString: String = "Product ID -> "
 
     Box(
         modifier = Modifier
-            .clickable { onNewsDetailClick(id) }
+            .clickable { onProductClick(id) }
             .fillMaxSize(),
     ) {
         Text(text = veryLongString + id)
@@ -32,8 +32,6 @@ fun NewsScreen(
 
 @Preview(showBackground = true)
 @Composable
-fun NewsScreenPreview() {
-    NewsScreen(
-        onNewsDetailClick = { },
-    )
+fun ProductScreenPreview() {
+    ProductScreen(onProductClick = {})
 }

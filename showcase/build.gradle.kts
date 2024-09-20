@@ -11,9 +11,9 @@ if (file("google-services.json").exists()) {
 }
 
 android {
-    namespace = "com.ecardero.eternal"
+    namespace = "com.ecardero.eternal.showcase"
     defaultConfig {
-        applicationId = "com.ecardero.eternal"
+        applicationId = "com.ecardero.eternal.showcase"
         versionCode = 1
         versionName = "1.0"
 

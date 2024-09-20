@@ -11,7 +11,7 @@ import androidx.compose.ui.tooling.preview.Preview
 
 @Composable
 fun HomeScreen(
-    onNavigateToNewsList: () -> Unit = {},
+    onNavigateToNewsClick: () -> Unit = {},
 ) {
     val veryLongString: String = "Hello Home Screen"
 
@@ -24,7 +24,7 @@ fun HomeScreen(
         )
 
         Button(
-            onClick = onNavigateToNewsList,
+            onClick = onNavigateToNewsClick,
         ) {
             Row {
                 Text(text = "Navigate to NewsList")

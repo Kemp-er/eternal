@@ -1,3 +1,3 @@
 package com.ecardero.eternal.core.designSystem
 
-val shape1 = "test"
+const val SHAPE1 = "test"

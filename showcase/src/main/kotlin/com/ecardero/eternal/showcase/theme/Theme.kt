@@ -1,4 +1,4 @@
-package com.ecardero.eternal.ui.theme
+package com.ecardero.eternal.showcase.theme
 
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme

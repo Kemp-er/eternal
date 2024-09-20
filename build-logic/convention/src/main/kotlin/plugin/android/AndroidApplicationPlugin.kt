@@ -17,6 +17,7 @@ class AndroidApplicationPlugin : Plugin<Project> {
         apply {
             plugin(libs.findPluginOrThrow("android.application").get().pluginId)
             plugin(libs.findPluginOrThrow("jetbrains.kotlin.android").get().pluginId)
+            plugin(libs.findPluginOrThrow("kotlin-serialization").get().pluginId)
             plugin(libs.findPluginOrThrow("ksp").get().pluginId)
         }
 
@@ -31,6 +32,7 @@ class AndroidApplicationPlugin : Plugin<Project> {
         dependencies {
             add("implementation", libs.findBundle("hilt").get())
             add("ksp", libs.findBundle("hilt-ksp").get())
+            add("implementation", libs.findLibrary("kotlinx.serialization.json").get())
         }
     }
 }

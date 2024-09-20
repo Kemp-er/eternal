@@ -1,7 +1,9 @@
-package com.eternal.core.presentation.list
+package com.eternal.feature.product.presentation.list
 
-interface NewsDetailContract {
-    data class UiState(val id: String)
+interface ProductListContract {
+    data class UiState(
+        val count: Int,
+    )
 
     sealed interface UiAction {
         data class OnIncreaseCountClick(val amount: Int) : UiAction

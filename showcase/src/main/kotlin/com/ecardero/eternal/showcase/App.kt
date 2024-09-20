@@ -1,4 +1,4 @@
-package com.ecardero.eternal
+package com.ecardero.eternal.showcase
 
 import android.app.Application
 import com.orhanobut.logger.AndroidLogAdapter

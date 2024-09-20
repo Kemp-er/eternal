@@ -1,42 +1,50 @@
 package com.eternal.news.navigation
 
+import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
+import androidx.navigation.NavOptionsBuilder
 import androidx.navigation.compose.composable
 import androidx.navigation.navDeepLink
 import androidx.navigation.navigation
-import androidx.navigation.toRoute
+import com.eternal.core.presentation.list.NewsListRoute
 import com.eternal.core.presentation.list.NewsListScreen
+import com.eternal.core.presentation.list.NewsRoute
 import com.eternal.core.presentation.list.NewsScreen
 import kotlinx.serialization.Serializable
-
-@Serializable
-object NewsList
-
-@Serializable
-data class News(val id: String)
 
 private const val BASE_ROUTE = "https://eternal.com"
 
 @Serializable
 object NewsGraph
 
-fun NavGraphBuilder.newsGraph() {
-    navigation<NewsGraph>(startDestination = NewsList) {
-        composable<NewsList>(
+fun NavController.navigateToNews(id: String, navOptions: NavOptionsBuilder.() -> Unit = {}) =
+    navigate(route = NewsRoute(id)) {
+        navOptions()
+    }
+
+fun NavGraphBuilder.newsGraph(
+    onNewsClick: (String) -> Unit,
+    onNewsDetailClick: (String) -> Unit,
+) {
+    navigation<NewsGraph>(startDestination = NewsListRoute) {
+        composable<NewsListRoute>(
             deepLinks = listOf(
-                navDeepLink<NewsList>(basePath = "$BASE_ROUTE/newslist"),
+                navDeepLink<NewsListRoute>(basePath = "$BASE_ROUTE/news"),
             ),
         ) {
-            NewsListScreen()
+            NewsListScreen(
+                onNewsClick = onNewsClick,
+            )
         }
 
-        composable<News>(
+        composable<NewsRoute>(
             deepLinks = listOf(
-                navDeepLink<News>(basePath = "$BASE_ROUTE/news"),
+                navDeepLink<NewsRoute>(basePath = "$BASE_ROUTE/news"),
             ),
-        ) { backStackEntry ->
-            val arguments = backStackEntry.toRoute<News>()
-            NewsScreen(id = arguments.id)
+        ) {
+            NewsScreen(
+                onNewsDetailClick = onNewsDetailClick,
+            )
         }
     }
 }

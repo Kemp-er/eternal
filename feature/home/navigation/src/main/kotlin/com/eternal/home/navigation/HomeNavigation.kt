@@ -7,17 +7,15 @@ import com.eternal.home.presentation.HomeScreen
 import kotlinx.serialization.Serializable
 
 @Serializable
-object Home
+object HomeRoute
 
 @Serializable
 object HomeGraph
 
 fun NavGraphBuilder.homeGraph() {
-    navigation<HomeGraph>(startDestination = Home) {
-        composable<Home> {
-            HomeScreen(
-                onNavigateToNewsList = {},
-            )
+    navigation<HomeGraph>(startDestination = HomeRoute) {
+        composable<HomeRoute> {
+            HomeScreen()
         }
     }
 }

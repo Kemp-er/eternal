@@ -1,4 +1,4 @@
-package com.ecardero.eternal.ui.theme
+package com.ecardero.eternal.showcase.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

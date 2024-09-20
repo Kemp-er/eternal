@@ -38,6 +38,7 @@ include(
     ":feature:login",
     ":feature:news",
     ":feature:home",
+    ":feature:product",
 )
 
 // Data
@@ -47,6 +48,7 @@ include(
     ":feature:login:data",
     ":feature:news:data",
     ":feature:home:data",
+    ":feature:product:data",
 )
 
 // Domain
@@ -56,6 +58,7 @@ include(
     ":feature:login:domain",
     ":feature:news:domain",
     ":feature:home:domain",
+    ":feature:product:domain",
 )
 
 // Presentation
@@ -66,15 +69,19 @@ include(
     ":feature:news:presentation:list",
     ":feature:news:presentation:detail",
     ":feature:home:presentation",
+    ":feature:product:presentation:list",
+    ":feature:product:presentation:detail",
 )
 
 // Navigation
 include(
     ":feature:home:navigation",
     ":feature:news:navigation",
+    ":feature:product:navigation",
 )
 
 // Integration
 include(
     ":integration:news",
+    ":integration:product",
 )

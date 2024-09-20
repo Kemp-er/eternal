@@ -1,3 +1,3 @@
 package com.ecardero.eternal.core.designSystem
 
-val font1 = "test"
+const val FONT1 = "test"

@@ -48,6 +48,13 @@
             <option value="$PROJECT_DIR$/feature/news/presentation" />
             <option value="$PROJECT_DIR$/feature/news/presentation/detail" />
             <option value="$PROJECT_DIR$/feature/news/presentation/list" />
+            <option value="$PROJECT_DIR$/feature/product" />
+            <option value="$PROJECT_DIR$/feature/product/data" />
+            <option value="$PROJECT_DIR$/feature/product/domain" />
+            <option value="$PROJECT_DIR$/feature/product/navigation" />
+            <option value="$PROJECT_DIR$/feature/product/presentation" />
+            <option value="$PROJECT_DIR$/feature/product/presentation/detail" />
+            <option value="$PROJECT_DIR$/feature/product/presentation/list" />
             <option value="$PROJECT_DIR$/feature/register" />
             <option value="$PROJECT_DIR$/feature/register/data" />
             <option value="$PROJECT_DIR$/feature/register/domain" />
@@ -58,6 +65,7 @@
             <option value="$PROJECT_DIR$/feature/splash/presentation" />
             <option value="$PROJECT_DIR$/integration" />
             <option value="$PROJECT_DIR$/integration/news" />
+            <option value="$PROJECT_DIR$/integration/product" />
             <option value="$PROJECT_DIR$/showcase" />
           </set>
         </option>
