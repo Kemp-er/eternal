@@ -1,6 +1,9 @@
 package plugin.android.compose
 
 import com.android.build.api.dsl.ApplicationExtension
+import com.android.build.gradle.internal.dsl.BaseAppModuleExtension
+import com.ecardero.eternal.configureAndroidBuildTypes
+import com.ecardero.eternal.configureAndroidEnvironments
 import com.ecardero.eternal.configureCompose
 import extension.findLibraryOrThrow
 import extension.findPluginOrThrow
@@ -23,6 +26,11 @@ class ComposeAndroidApplicationPlugin : Plugin<Project> {
 
         extensions.configure<ApplicationExtension> {
             configureCompose(this)
+        }
+
+        extensions.configure<BaseAppModuleExtension> {
+            configureAndroidBuildTypes(this)
+            configureAndroidEnvironments(this)
         }
 
         dependencies {
